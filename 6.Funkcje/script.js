@@ -9,7 +9,7 @@ function show()
   var data = 35
   function show(parametr)
   {
-    console.log(parametr)
+    console.log(parametr);
   } show(data);
 
   //3

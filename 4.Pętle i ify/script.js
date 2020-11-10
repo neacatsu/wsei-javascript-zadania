@@ -66,3 +66,25 @@ else if(i%5 == 0)
 else
     console.log(i);
 }
+//8
+//a
+for (let i = 1; i <= 5; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
+//b
+let star = ' *';
+
+for(let x = 0; x < 5; x++) {
+    var result = '';
+    for(y = 0; y < 5 - x; y++) {
+        result += ' ';
+    }
+    for(z = 0; z <  x + 1; z++) {
+        result += star;
+    }
+    console.log(result);
+}
