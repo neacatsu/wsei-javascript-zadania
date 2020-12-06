@@ -55,3 +55,17 @@ function x(){
   }
 }
 document.querySelector('#ex5-button').addEventListener('click',x);
+
+//6
+document.addEventListener('scroll',function(){
+  
+  if(window.scrollY<200){
+    document.body.style.backgroundColor="red";
+  }
+  else{
+    document.body.style.backgroundColor="white";
+  }
+  
+  
+})
+//7
