@@ -88,3 +88,75 @@ for(let x = 0; x < 5; x++) {
     }
     console.log(result);
 }
+//c
+for(var j = 1; j <= 10; j+=2){
+    var result = "";
+    var wynik1 = (10 - 2*j) / 2;
+    var wynik2 = 10 - j/ 2;
+    for(var i = 1; i <= wynik2 - 5; i++){
+       result+=" ";
+    }
+  
+    for(var i = 1; i <= 10 / 2 - wynik1; i++){
+       result+="*";
+    }
+    console.log(result);
+  }
+
+  //d
+var x = 5;
+var y = 4;
+
+for(var j = 0; j < x*2+1; j++) {
+  var result = "";
+  if(y == -1) y = 4;
+  
+  if(j < x){
+    for(var i = 0; i < x - y; i++) {
+      result+="*";
+    }
+    for(var i = 0; i < x - (x - y); i++){
+      result+=(x-y)+i;
+    }
+    y--;
+  }
+  
+  else if(j == x){
+    for(var i = 0; i < x; i++) result += "-";
+  }
+  
+  if(j > x){
+    for(var i = 0; i < x - (x - y) + 1; i++) {
+      result += "*";
+    }
+    for(var i = 1; i <=  x - y - 1; i++){
+      result += y + i;
+    }
+    y--;
+  }
+  console.log(result);
+}
+
+//e
+
+let star = ' *';
+for(let x = 0; x < 5; x++) {
+    var result = '';
+    for(y = 0; y < 5 - x; y++) {
+        result += ' ';
+    }
+    for(z = 0; z <  x + 1; z++) {
+        result += star;
+    }
+    console.log(result);
+}
+
+for(let x = 0; x < 3; x++){
+  var result = "";
+  for(let y = 0; y < 5; y++){
+    result += " ";
+  }
+  result += star;
+  console.log(result);
+}
+

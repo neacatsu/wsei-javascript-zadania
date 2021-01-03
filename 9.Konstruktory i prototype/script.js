@@ -1,3 +1,5 @@
+//1
+
 function Person(name, surname,age, country, city){
     this.name=name;
     this.surname=surname;
@@ -92,7 +94,7 @@ function Person(name, surname,age, country, city){
     this.check= function(number){
       if(number>5){
         clearInterval(time);
-        console.log("sdfdsf");
+        console.log("Program sie zakończył");
       }
     }
     

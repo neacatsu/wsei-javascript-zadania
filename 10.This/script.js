@@ -45,14 +45,10 @@ person.food = new Array();
  person.showFood();
 
  //3
- function Calculator() {
-  var number1=0;
-  var number2=0;
-    
-  this.save = function(a,b) {
-   number1 = parseInt(a);
-    number2 = parseInt(b);
-  }
+ function Calculator(number1, number2) {
+  this.number1=number1;
+ this.number2=number2;
+
   this.add = function() {
     var result = number1 + number2;
     return console.log(result);
@@ -73,10 +69,34 @@ person.food = new Array();
     return console.log(result);
   }
 }
+var x= new Calculator(2,3);
+x.add();
+x.divide();
 
-var result1= new Calculator;
+//4
+let stairs = {
+  yourStair: 0,
+  goUp: function() {
+      this.yourStair++;
+  },
+  
+  goDown: function() {
+      if (this.yourStair <= 0) {
+          this.yourStair = 0;
+          console.log("You reached the lowest stair!");
+          
+          return;
+      }
+      this.yourStair--;
+  },
 
-result1.save(3,4);
-result1.add();
-result1.divide();
+  tellMeMyStair: function() {
+      return `Your Stair: ${this.yourStair}`;
+  }
+};
 
+console.log(stairs.tellMeMyStair());
+stairs.goUp();
+console.log(stairs.tellMeMyStair());
+stairs.goDown();
+stairs.goDown();
