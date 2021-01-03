@@ -36,3 +36,4 @@ let num2 = 12;
 let result = null;
 result = num1>num2;
 console.log(result);
+

@@ -17,25 +17,30 @@ function example2(x) {
 //2.2
     console.log(x.outerHTML);
 //2.3
+  console.log([...x.classList].join(', '));
+ //2.4
+  console.log([...x.classList]);
+  //2.5
+  console.log(x.dataset)
+} example2(x);
  
-}
-example2(x);
 
 //3
-var x=document.querySelector('#datasetCheck');
-var add=0;
-var sub=0;
-function example3(x){
-  var first=parseInt(x.dataset.numberone);
-  var second=parseInt(x.dataset.numbertwo);
-  var third=parseInt(x.dataset.numberthree);
-  add=first+second+third;
-  sub=first-second-third;
- console.log(add); 
-console.log(sub); 
+var x = document.querySelector('#datasetCheck');
+var array=[x.dataset.numberone, x.dataset.numbertwo, x.dataset.numberThree];
+
+function show(array) {
+  var add=0;
+  var sub=0;
+
+    array.forEach((e) => {
+      add += parseInt(e);
+      sub -= parseInt(e);
+    })
+    console.log(add, sub);
 }
-example3(x);
-//zmieniłam w html data-number-three na data-numberThree nie wiem czy to był błąd czy było to specjalnie. Jeśli tak to zmienie zadanie
+show(array);
+
 //4
 document.querySelector('#spanText').textContent="Jakiś tam dowolny tekst";
 //5
@@ -92,3 +97,29 @@ function add(random){
   }
 }
 console.log(x);
+
+//10
+var longList = document.querySelector('#longList');
+var li=longList.querySelectorAll('li');
+
+function createArray(longList) {
+    let array = [];
+    li.forEach(function(element) {
+        array.push(element.innerText);
+      });
+ return array;
+}console.log(createArray(longList));
+
+//11
+var longList = document.querySelector('#longList').children;
+
+function changeChildren(longList) {
+        var arrayChildren = [...longList];
+
+          arrayChildren.forEach(function(element) {
+            var rand = Math.round(Math.random() * 10);
+            element.dataset.oldValue = element.innerText;
+            element.innerText = rand;
+        });        
+    }
+ changeChildren(longList);

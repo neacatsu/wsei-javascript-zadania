@@ -14,20 +14,28 @@ function find(x){
 }
   var x=document.getElementById('ex2');
   find(x);
+  
 //3
-//zad 4
-
-const buttons = document.querySelectorAll("#ex3 button");
-for (let i = 0; i<buttons.length;i++){
-    buttons[i].addEventListener("click", function(){
-        let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-        this.parentElement.style.backgroundColor = randomColor;
-    })
+var x = document.querySelectorAll('#ex3 button');
+var temp=0;
+function show(x){
+ 
+  x.addEventListener('click', function(){
+    var y=x.nextElementSibling;
+    if(temp==0){
+      y.style.display = "block";
+      temp=1;
+    }
+    else{
+      y.style.display = "none";
+      temp=0;
+    }
     
+  })
 }
-var x=document.querySelectorAll('#ex3 button');
-x.forEach(x=>{
-  show(x);
+
+x.forEach( x => {
+    show(x);
 })
 
 //zad 4
@@ -90,12 +98,11 @@ let all = () => {
 let divZ5 = document.getElementById("ex5");
 var backgroundColor;
 
-// event
 divZ5.addEventListener("mouseover", (x) => {
   if (x.target.tagName == "DIV" && x.target.style.length > 0) {
       backgroundColor = x.target.style.backgroundColor;
 
-      // to podmienić;
+     
       all();
   }
 })

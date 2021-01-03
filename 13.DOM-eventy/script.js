@@ -14,10 +14,16 @@ document.querySelector('#test-event').addEventListener('click', function(x){
   window.addEventListener('keydown', function(x){
     console.log(x);
   })
-  1.5
+  //1.5
   window.addEventListener('scroll', function(x){
     console.log(x);
   })
+  //1.6
+  document.querySelector('#input-test').addEventListener('change', function(x) {
+    console.log(x);
+})
+
+
   //2
   var x=document.querySelector("#span-ex2");
 function click(){
@@ -41,7 +47,7 @@ document.querySelector("#ex3").addEventListener('mousemove',function(){
         temp.textContent = "You cannot enter numbers";
     }
   });
-  //5
+//5
 var temp= document.querySelector("#ex5-span");
 var con=0;
 function x(){
@@ -69,3 +75,28 @@ document.addEventListener('scroll',function(){
   
 })
 //7
+let calculatorInput = document.querySelector('#calculator > input');
+let nextClickIsEval = false;
+let nextClickIsClear = false;
+var array=['/', '*', '+', '-'];
+
+    document.querySelectorAll('#calculator > div > button').forEach((element) => {
+        element.addEventListener('click', (event) => {
+            if (nextClickIsClear == true) {
+                calculatorInput.value = "";
+                nextClickIsClear = false;
+            }
+
+            calculatorInput.value = calculatorInput.value + event.target.innerText;
+
+            if (nextClickIsEval == true) {
+                calculatorInput.value = eval(calculatorInput.value);
+                nextClickIsEval = false;
+                nextClickIsClear = true;
+            }
+
+            if (array.includes(event.target.innerText)) {
+                nextClickIsEval = true;
+            }
+        });
+    });
